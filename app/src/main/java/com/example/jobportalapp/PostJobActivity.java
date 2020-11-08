@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.jobportalapp.Model.Data;
@@ -138,7 +139,7 @@ public class PostJobActivity extends AppCompatActivity {
         }
 
         public void setJobSkills(String skills){
-            TextView mSkills = myview.findViewById(R.id.job_skill);
+            TextView mSkills = myview.findViewById(R.id.job_skills);
             mSkills.setText(skills);
         }
 
