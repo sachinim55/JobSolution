@@ -1,18 +1,17 @@
 package com.example.jobportalapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobportalapp.Model.Data;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,13 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.internal.bind.DateTypeAdapter;
-
-import org.w3c.dom.Text;
 
 public class PostJobActivity extends AppCompatActivity {
 
     private FloatingActionButton fabBtn;
+    private Toolbar toolbar;
 
     //Recycler View
 
@@ -41,11 +38,18 @@ public class PostJobActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job);
+
+        toolbar = findViewById(R.id.toolbar_post_job);
+        setSupportActionBar(toolbar);
+
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         fabBtn = findViewById(R.id.fab_add);
 
@@ -107,8 +111,9 @@ public class PostJobActivity extends AppCompatActivity {
             }
 
         };
-        recyclerView.setAdapter(adapter);
         adapter.startListening();
+        recyclerView.setAdapter(adapter);
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -138,7 +143,7 @@ public class PostJobActivity extends AppCompatActivity {
         }
 
         public void setJobSkills(String skills){
-            TextView mSkills = myview.findViewById(R.id.job_skill);
+            TextView mSkills = myview.findViewById(R.id.job_skills);
             mSkills.setText(skills);
         }
 

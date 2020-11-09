@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+
     android:layout_gravity="center"
     android:gravity="center"
     android:layout_height="match_parent"
@@ -19,6 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:background="@android:color/holo_blue_light"
             android:layout_height="wrap_content">
 
 
@@ -26,49 +29,73 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
+                android:layout_marginBottom="30dp"
+                android:height="60dp"
+                android:textStyle="bold"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:gravity="center"
                 />
             
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="150dp"
                 android:layout_margin="10dp"
-                android:hint="Email"
+                android:ems="10"
+                android:hint=" Email Address"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/custom_input"
+                android:padding="12dp"
+                android:drawableStart="@drawable/email1"
                 android:id="@+id/email_login"
-                />
+                android:drawableLeft="@drawable/email" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
-                android:hint="Password"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"
+                android:drawableLeft="@drawable/lock1"
+                android:hint=" Password"
+                android:background="@drawable/custom_input"
                 android:id="@+id/login_password"
                 />
-            
+
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Log in"
+                android:text="Login"
+
+
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+
+                android:textColor="@android:color/white"
+                android:background="@drawable/custom_button"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/btn_login"
                 />
             
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="OR"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:padding="10dp"/>
+
 
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Registration"
+                android:text="Register"
+
+
+                android:backgroundTint="@android:color/holo_blue_dark"
+
+
+                android:textColor="@android:color/white"
+                android:background="@drawable/custom_button"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:id="@+id/btn_reg"/>
 

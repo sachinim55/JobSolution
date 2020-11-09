@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+
     android:gravity="center"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
@@ -17,6 +18,7 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
+
         android:layout_height="match_parent">
 
 
@@ -25,6 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="See All Job Post"
+            android:backgroundTint="@android:color/darker_gray"
+
+            android:background="@drawable/custom_button"
             android:textColor="@android:color/black"
             android:textAppearance="?android:textAppearanceMedium"
             android:id="@+id/btn_allJob"
@@ -35,6 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Post A Job"
+            android:background="@drawable/custom_button"
+            android:backgroundTint="@android:color/darker_gray"
             android:textColor="@android:color/black"
             android:textAppearance="?android:textAppearanceMedium"
             android:id="@+id/btn_PostJob"

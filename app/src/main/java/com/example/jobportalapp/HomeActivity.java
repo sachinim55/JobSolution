@@ -1,14 +1,19 @@
 package com.example.jobportalapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.widget.Toolbar;
 
- public class HomeActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class HomeActivity extends AppCompatActivity {
 
     private Button btnAllJob;
     private Button btnPostJob;
@@ -16,6 +21,7 @@ import androidx.appcompat.widget.Toolbar;
     //Toolbar
 
      private Toolbar toolbar;
+     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,7 @@ import androidx.appcompat.widget.Toolbar;
 
         getSupportActionBar().setTitle("Job Portal App");
 
-
+        mAuth = FirebaseAuth.getInstance();
 
 
         btnAllJob = findViewById(R.id.btn_allJob);
@@ -38,7 +44,7 @@ import androidx.appcompat.widget.Toolbar;
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(),AllJobActivity.class));
+                startActivity(new Intent(getApplicationContext(), AllJobActivity.class));
 
             }
         });
@@ -52,9 +58,27 @@ import androidx.appcompat.widget.Toolbar;
             }
         });
 
-
-
-
-
     }
-}
+
+     @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.mainmenu,menu);
+         return super.onCreateOptionsMenu(menu);
+    }
+
+     @Override
+     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.logout:
+                mAuth.signOut();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                break;
+
+
+        }
+
+         return super.onOptionsItemSelected(item);
+     }
+ }

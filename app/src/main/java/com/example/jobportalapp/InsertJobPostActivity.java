@@ -36,6 +36,8 @@ public class InsertJobPostActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mJobPost;
 
+    private DatabaseReference mPublicDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +49,16 @@ public class InsertJobPostActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Post job");
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser mUser = mAuth.getCurrentUser();
         String uId = mUser.getUid();
 
         mJobPost = FirebaseDatabase.getInstance().getReference().child("Job Post").child(uId);
+        mPublicDatabase = FirebaseDatabase.getInstance().getReference().child("Public database");
 
 
         InsertJob();
@@ -104,6 +110,8 @@ public class InsertJobPostActivity extends AppCompatActivity {
                 Data data = new Data(title, description, skills, salary, id, date);
 
                 mJobPost.child(id).setValue(data);
+
+                mPublicDatabase.child(id).setValue(data);
 
                 Toast.makeText(getApplicationContext(),"Successful", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), PostJobActivity.class));
