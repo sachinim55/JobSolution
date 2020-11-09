@@ -211,8 +211,6 @@
                  android:layout_height="wrap_content"
                  android:layout_margin="5dp"
                  android:text="Post Job"
-                 android:background="@drawable/custom_button"
-                 android:backgroundTint="@android:color/darker_gray"
                  android:id="@+id/btn_job_post"
                  />
 
