@@ -14,14 +14,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:background="@android:color/holo_blue_light"
+            android:layout_margin="15dp"
+
             android:layout_height="wrap_content">
 
 
@@ -29,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="25dp"
+                android:padding="12dp"
                 android:height="60dp"
                 android:textStyle="bold"
                 android:textAppearance="?android:textAppearanceLarge"
@@ -68,14 +66,11 @@
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Login"
-
-
-                android:backgroundTint="@android:color/holo_blue_dark"
-
-
+                android:backgroundTint="@android:color/holo_orange_light"
                 android:textColor="@android:color/white"
                 android:background="@drawable/custom_button"
                 android:textAppearance="?android:textAppearanceMedium"
@@ -87,11 +82,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:text="Register"
 
 
-                android:backgroundTint="@android:color/holo_blue_dark"
+                android:backgroundTint="@android:color/holo_orange_light"
 
 
                 android:textColor="@android:color/white"
