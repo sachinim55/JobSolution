@@ -41,8 +41,8 @@ public class JobDetailsActivity extends AppCompatActivity {
         mTitle = findViewById(R.id.job_details_title);
         mDate = findViewById(R.id.job_details_date);
         mDescription = findViewById(R.id.job_details_description);
-        mSkills = findViewById(R.id.all_job_post_skills);
-        mSalary = findViewById(R.id.all_job_post_salary);
+        mSkills = findViewById(R.id.job_details_skills);
+        mSalary = findViewById(R.id.job_details_salary);
 
 
 
@@ -59,6 +59,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         mTitle.setText(title);
         mDate.setText(date);
         mDescription.setText(description);
+
         mSkills.setText(skills);
         mSalary.setText(salary);
 
